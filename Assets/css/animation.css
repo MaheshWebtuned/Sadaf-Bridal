@@ -1,0 +1,70 @@
+/* =====================
+   Base Reveal Animations
+===================== */
+[class*="reveal-"] {
+    opacity: 0;
+    /* Transition only what we actually animate (no 'all') */
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Directions */
+.reveal-bottom {
+    transform: translateY(100px);
+}
+
+.reveal-top {
+    transform: translateY(-100px);
+}
+
+.reveal-right {
+    transform: translateX(100px);
+}
+
+.reveal-left {
+    transform: translateX(-100px);
+}
+
+.reveal-left-rotate {
+    transform: translateX(-100px) rotate(360deg);
+    transition: transform 1s ease, opacity 0.8s ease;
+}
+
+.reveal-fade {
+    opacity: 0;
+    /* Only opacity for fade */
+    transition: opacity 2s ease;
+}
+
+/* 🌸 Bloom Animation */
+.reveal-bloom {
+    opacity: 0;
+    transform: scale(0.2);
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+/* When element is visible */
+.reveal-visible {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+/* Optional: smooth bounce after bloom */
+.reveal-bloom.reveal-visible {
+    animation: bloom-bounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes bloom-bounce {
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

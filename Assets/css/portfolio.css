@@ -1,0 +1,174 @@
+:root {
+    --color-white: #F8F8F8;
+    --color-black: #0A0A0A;
+    --color-gold: #D4AF37;
+    --color-champagne: #E6C67A;
+}
+
+@font-face {
+    font-family: "Gambarino";
+    src:
+        url("../fonts/Gambarino-Regular.woff2") format("woff2"),
+        url("../fonts/Gambarino-Regular.woff") format("woff"),
+        url("../fonts/Gambarino-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: "Gambarino", "Gambarino Placeholder", serif;
+}
+
+
+
+
+/* VIDEO SECTION */
+.portfolio-video-section {
+    padding: 0 clamp(10px, 5vw, 40px);
+}
+
+
+.portfolio-video-container {
+    padding: clamp(10px, 5vw, 80px);
+    padding-bottom: 40px;
+    background-color: var(--color-white);
+}
+
+.portfolio-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.portfolio-header h1 {
+    color: var(--color-gold);
+    font-size: 48px;
+
+}
+
+.portfolio-video {
+    border-radius: 20px;
+    padding: 10px 0px;
+    overflow: hidden;
+    aspect-ratio: 7/10;
+    margin: 5px 0px;
+}
+
+
+.portfolio-video {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 6 / 8;
+    display: block;
+}
+
+
+
+
+
+
+/* OVERLAY BACKGROUND */
+.video-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* ACTIVE */
+.video-overlay.active {
+    display: flex;
+}
+
+/* VIDEO */
+#overlayVideo {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 16px;
+}
+
+/* CLOSE BUTTON */
+.overlay-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/* NAVIGATION */
+.overlay-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: #fff;
+    font-size: 28px;
+    padding: 12px 16px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.overlay-nav.prev {
+    left: 20px;
+}
+
+.overlay-nav.next {
+    right: 20px;
+}
+
+@media (max-width: 576px) {
+    #overlayVideo {
+        max-width: 95%;
+        max-height: 70vh;
+    }
+
+    .overlay-nav {
+        font-size: 22px;
+        padding: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== IMAGE GALLERY SECTION STYLING ===== */
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: clamp(10px, 5vw, 80px);
+    padding-top: 40px;
+}
